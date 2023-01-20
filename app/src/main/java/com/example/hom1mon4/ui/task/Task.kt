@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
 import com.example.hom1mon4.databinding.FragmentTaskBinding
-import com.example.hom1mon4.ui.TaskData
 
 class Task : Fragment() {
 
@@ -22,6 +21,7 @@ class Task : Fragment() {
     ): View? {
         binding = FragmentTaskBinding.inflate(inflater, container,false)
         return binding.root
+
     }
 
 

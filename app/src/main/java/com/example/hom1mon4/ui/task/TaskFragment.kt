@@ -10,11 +10,6 @@ import com.example.hom1mon4.databinding.FragmentTaskBinding
 class TaskFragment : Fragment() {
 
 
-
-
-
-
-
     private lateinit var binding:FragmentTaskBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

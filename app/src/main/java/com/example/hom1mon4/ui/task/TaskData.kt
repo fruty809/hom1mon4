@@ -1,4 +1,4 @@
-package com.example.hom1mon4.ui
+package com.example.hom1mon4.ui.task
 
 import java.io.Serializable
 

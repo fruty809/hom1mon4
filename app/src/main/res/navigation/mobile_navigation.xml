@@ -25,12 +25,19 @@
     <fragment
         android:id="@+id/taskFragment"
         android:name="com.example.hom1mon4.ui.task.TaskFragment"
-        android:label="Task"
+        android:label="task"
         tools:layout="@layout/fragment_task" />
 
     <fragment
         android:id="@+id/profile"
-        android:name="com.example.hom1mon4.Profile"
+        android:name="com.example.hom1mon4.ui.Profile.Profile"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.example.hom1mon4.ui.onBoarding.OnBoardingFragment"
+        android:label="fragment_on_boarding"
+        tools:layout="@layout/fragment_on_boarding" />
+
 </navigation>
+
