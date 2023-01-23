@@ -7,17 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.hom1mon4.databinding.FragmentOnBoardingBinding
+import com.example.hom1mon4.ui.data.Pref
 import com.example.hom1mon4.ui.onBoarding.BoardingAdapter.OnBoardingAdapter
 
 class OnBoardingFragment : Fragment() {
-    private lateinit var binding: FragmentOnBoardingBinding
+    private lateinit var binding:FragmentOnBoardingBinding
+    private lateinit var pref: Pref
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
 
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,13 +26,16 @@ class OnBoardingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        pref = Pref(requireContext())
+        val adapter1 = OnBoardingAdapter(){
+            pref.userSeen()
+            findNavController().navigateUp()
 
+        }
 
         val dotsIndicator = binding.dotsIndicator
         val viewPager = binding.pager
-        val adapter1 = OnBoardingAdapter(){
-            findNavController().navigateUp()
-        }
+
         viewPager.adapter = adapter1
         dotsIndicator.attachTo(viewPager)
 

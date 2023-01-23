@@ -29,6 +29,7 @@ class TaskAdapter: RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
         fun bind(task: TaskData) {
             binding.descText.text = task.desc
             binding.taskText.text = task.title
+
         }
 
     }
