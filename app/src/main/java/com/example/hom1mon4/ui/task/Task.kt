@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
 import com.example.hom1mon4.databinding.FragmentTaskBinding
+import com.example.hom1mon4.ui.App
 
 class Task : Fragment() {
 
@@ -28,10 +29,15 @@ class Task : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnSave.setOnClickListener{
-            setFragmentResult(RESULT_TASK, bundleOf("bundleKey" to TaskData(binding.edTitle.text.toString(), binding.edDesc.text.toString())))
+            App.db.taskDao().insert(TaskData(title = binding.edTitle.text.toString(), desc = binding.edDesc.text.toString()))
             findNavController().navigateUp()
         }
 
+    }
+
+    fun binding(){
+        binding.edTitle.text.toString()
+        binding.edDesc.text.toString()
     }
     companion object{
         const val RESULT_TASK = "result"
